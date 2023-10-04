@@ -40,4 +40,3 @@ pipeline {
             // Puedes agregar aquí otros pasos que deseas ejecutar en caso de fallo
         }
     }
-}
