@@ -1,4 +1,3 @@
-
 pipeline {
     agent any  // Usar cualquier agente disponible en Jenkins
     
@@ -17,11 +16,6 @@ pipeline {
             }
         }
         
-        //stage('Build') {
-            //steps {
-                // Paso para construir tu proyecto
-                //sh 'python manage.py'  // Ejemplo de comando de manage.py
-            //}
         stage('Ejecutar la aplicación de Python') {
             steps {
                 // Ejecutar la aplicación de Python
@@ -29,14 +23,18 @@ pipeline {
             }
         }
     }
-    
+
     post {
+        success {
+            // Acciones a realizar si el pipeline se ejecuta correctamente
        success {
             echo 'El pipeline se ejecutó con éxito'
             // Puedes agregar aquí otros pasos que deseas ejecutar en caso de éxito
         }
         failure {
+            // Acciones a realizar si el pipeline falla
             echo 'El pipeline falló'
             // Puedes agregar aquí otros pasos que deseas ejecutar en caso de fallo
         }
     }
+}
