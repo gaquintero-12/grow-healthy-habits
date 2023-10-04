@@ -1,0 +1,30 @@
+{%extends 'app/base.html'%}
+
+
+{%block contenido%}
+
+{%load crispy_forms_tags%}
+
+<div class="row">
+    <h1>Reporte</h1>
+    <div class="col-12 col-md offset-md-3">
+        <form action="" class="formularioRerporte" method="post">
+
+            {% csrf_token %}
+            
+            {{ form | crispy  }}
+
+            <br>
+            <div class="d-flex justify-content-end">
+                <input type="reset" value="Cancelar" class="btn btn-secondary">
+                <button type="submit" id="btnEnviar" class="btn btn-primary">Enviar</button>
+            </div>
+            
+        </form>
+    </div>
+</div>
+
+
+{{mensaje}}
+
+{%endblock%}

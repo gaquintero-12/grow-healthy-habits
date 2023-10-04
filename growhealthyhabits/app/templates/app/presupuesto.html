@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba</title>
+</head>
+<body>
+{%load humanize%}
+    {% for p in presupuestos%}
+        <div>
+            {% if p.imagen%}
+            <img src="{{p.imagen.url}}" alt="">
+            {%endif%}
+            <h1>{{p.monto | capfirst}}</h1>
+            <h1>{{p.tipo| title}}</h1>
+            <h1>${{p.ingresos | intcomma}}</h1>
+            <h1>{{p.metafecha}}</h1>
+        </div>
+    {%endfor%}
+</body>
+</html>

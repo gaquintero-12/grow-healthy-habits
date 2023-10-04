@@ -1,0 +1,36 @@
+
+pipeline {
+    agent any  // Usar cualquier agente disponible en Jenkins
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                // Clonar el repositorio de código fuente (puede variar según el sistema de control de versiones)
+                checkout scm
+            }
+        }
+        
+        stage('Instalar dependencias') {
+            steps {
+                // Instalar las dependencias de Python (por ejemplo, usando pip)
+                sh 'pip install -r requirements.txt'
+            }
+        }
+        
+        stage('Ejecutar la aplicación de Python') {
+            steps {
+                // Ejecutar la aplicación de Python
+                sh 'python mi_aplicacion.py'  // Reemplaza "mi_aplicacion.py" con el nombre de tu archivo de Python
+            }
+        }
+    }
+    
+    post {
+        success {
+            // Acciones a realizar si el pipeline se ejecuta correctamente
+        }
+        failure {
+            // Acciones a realizar si el pipeline falla
+        }
+    }
+}
