@@ -21,7 +21,7 @@ pipeline {
             //steps {
                 // Paso para construir tu proyecto
                 //sh 'python manage.py'  // Ejemplo de comando de manage.py
-            }
+            //}
         stage('Ejecutar la aplicación de Python') {
             steps {
                 // Ejecutar la aplicación de Python
