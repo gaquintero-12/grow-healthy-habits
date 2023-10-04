@@ -26,11 +26,13 @@ pipeline {
     }
     
     post {
-        success {
-            // Acciones a realizar si el pipeline se ejecuta correctamente
+       success {
+            echo 'El pipeline se ejecutó con éxito'
+            // Puedes agregar aquí otros pasos que deseas ejecutar en caso de éxito
         }
         failure {
-            // Acciones a realizar si el pipeline falla
+            echo 'El pipeline falló'
+            // Puedes agregar aquí otros pasos que deseas ejecutar en caso de fallo
         }
     }
 }
